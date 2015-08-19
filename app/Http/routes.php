@@ -42,3 +42,17 @@ Route::match(['get', 'post', 'put'], '/testing', function () {
 Route::any("/cualquiercosa", function(){
 	echo 'La ruta /cualquiercosa asociada a cualquier verbo';
 });
+
+
+Route::get('colaboradores/{nombre}', function($nombre){
+	return "Mostrando el colaborador $nombre";
+})->where(array('nombre' => '[a-zA-Z]+'));
+
+//Route::get('tienda/productos/{id}','TiendaController@producto');
+
+Route::get('agenda/{mes}/{ano}', function($mes, $ano){
+	return "Viendo la agenda de $mes de $ano";
+});
+
+
+Route::get('recibir', 'PrimerController@recibirPost');
