@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('recibir', function () {
+    return "FINNNN";
+});
+
+Route::get('users', function()
+{
+    return View::make('users');
+});
