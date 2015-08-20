@@ -23,3 +23,8 @@ Route::get('users', function()
 {
     return View::make('users');
 });
+
+//Route::resource('photo', 'PhotoController');
+
+Route::resource('photo', 'PhotoController',
+                array('only' => array('index', 'show')));
