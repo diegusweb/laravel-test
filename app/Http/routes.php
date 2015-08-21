@@ -48,3 +48,13 @@ Route::match(['get', 'post', 'put'], '/testing', function () {
 Route::any("/cualquiercosa", function(){
 	echo 'La ruta /cualquiercosa asociada a cualquier verbo';
 });
+
+//Con dos rutas registradas que tienen patrones distintos,
+
+Route::get('categoria/{categoria}', function($categoria){
+	return "Ruta 1- Viendo categoría $categoria y no recibo página";
+});
+
+Route::get('categoria/{categoria}/{pagina?}', function($categoria, $pagina=1){
+	return "Ruta 2 - Viendo categoría $categoria y página $pagina";
+});
