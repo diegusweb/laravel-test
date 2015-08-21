@@ -58,3 +58,9 @@ Route::get('categoria/{categoria}', function($categoria){
 Route::get('categoria/{categoria}/{pagina?}', function($categoria, $pagina=1){
 	return "Ruta 2 - Viendo categoría $categoria y página $pagina";
 });
+
+//a controlador
+Route::post('recibir', 'CategoriasController@recibirPost');
+
+//Recibir parámetros de la ruta
+Route::post('editar/{id}', 'CategoriasController@editar');
